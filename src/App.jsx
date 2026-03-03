@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useCallback } from 'react'
 import { useAgent } from './context/AgentContext.jsx'
 import Sidebar from './components/Sidebar/Sidebar.jsx'
 import TopBar from './components/TopBar/TopBar.jsx'
@@ -17,9 +17,24 @@ const stateBackgroundMap = {
 export default function App() {
   const { state } = useAgent()
   const bgClass = stateBackgroundMap[state.status] || ''
+  const bgRef = useRef(null)
+
+  const handleMouseMove = useCallback((e) => {
+    const el = bgRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const xPercent = ((e.clientX - rect.left) / rect.width) * 100
+    const yPercent = ((e.clientY - rect.top) / rect.height) * 100
+    el.style.setProperty('--mouse-x', `${xPercent}%`)
+    el.style.setProperty('--mouse-y', `${yPercent}%`)
+  }, [])
 
   return (
-    <div className={`flex h-screen bg-background text-text-primary overflow-hidden transition-all duration-500 ${bgClass}`}>
+    <div
+      ref={bgRef}
+      onMouseMove={handleMouseMove}
+      className={`reactive-bg flex h-screen text-text-primary overflow-hidden transition-all duration-500 ${bgClass}`}
+    >
       {/* Background glow decoration */}
       <div
         className="pointer-events-none fixed top-1/4 right-1/4 w-96 h-96 rounded-full opacity-30 transition-opacity duration-500"

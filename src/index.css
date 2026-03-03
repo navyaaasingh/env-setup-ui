@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-obsidian: #111010;
+  --color-crimson: rgba(141, 49, 45, 0.1);
+  --color-neural-purple: rgba(112, 0, 255, 0.18);
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -84,6 +90,44 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .reactive-bg {
+    background-color: #111010;
+    background-image: radial-gradient(
+      circle at 20% 15%,
+      var(--color-crimson) 0%,
+      var(--color-obsidian) 70%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reactive-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .reactive-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      var(--color-neural-purple) 0%,
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .reactive-bg:hover::after {
+    opacity: 1;
   }
 }
 
