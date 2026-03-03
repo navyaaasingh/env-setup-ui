@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import { Paperclip } from 'lucide-react'
+import React, { useRef } from "react"
+import { Paperclip } from "lucide-react"
 
 export default function AttachFiles() {
   const inputRef = useRef(null)
@@ -11,7 +11,7 @@ export default function AttachFiles() {
   const handleFileChange = (e) => {
     const files = Array.from(e.target.files || [])
     if (files.length > 0) {
-      console.log('Attached files:', files.map((f) => f.name))
+      console.log("Attached files:", files.map((f) => f.name))
     }
   }
 
@@ -25,15 +25,19 @@ export default function AttachFiles() {
         onChange={handleFileChange}
         aria-label="Attach files"
       />
+
       <button
         onClick={handleClick}
         title="Attach Files"
         className="
-          flex items-center gap-2 px-3 py-2 rounded-lg
-          border border-border-subtle text-text-muted
-          hover:text-primary hover:border-primary/50
-          transition-all duration-200 text-sm
-          glass-card
+          flex items-center gap-2 px-4 py-2.5 rounded-xl
+          bg-white/5 backdrop-blur-md
+          border border-white/10
+          text-text-muted
+          hover:text-blue-400
+          hover:border-blue-400/40
+          hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]
+          transition-all duration-300 text-sm font-medium
         "
       >
         <Paperclip size={15} />

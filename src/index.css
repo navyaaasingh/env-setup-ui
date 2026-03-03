@@ -8,6 +8,25 @@
   --color-neural-purple: rgba(160, 0, 255, 0.18);
 }
 
+@keyframes float {
+  0% { transform: translateY(0px); opacity: 0.6; }
+  50% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(0px); opacity: 0.6; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
 @layer base {
   * {
     box-sizing: border-box;
