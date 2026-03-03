@@ -13,8 +13,8 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #0F0A0A;
-    color: #FAFAF9;
+    background-color: #111010;
+    color: #F4EEED;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
@@ -24,38 +24,38 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #1C1616;
+    background: #331E1F;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #2D2626;
+    background: #442A2B;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #71717A;
+    background: #C3A7A6;
   }
 }
 
 @layer components {
   .glass-card {
-    background: rgba(28, 22, 22, 0.6);
+    background: rgba(51, 30, 31, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid #2D2626;
-    box-shadow: 0 4px 24px rgba(153, 27, 27, 0.4);
+    border: 1px solid #442A2B;
+    box-shadow: 0 4px 24px rgba(141, 49, 45, 0.4);
   }
 
   .btn-primary {
-    background: linear-gradient(45deg, #F59E0B, #EA580C);
-    color: #0F0A0A;
+    background: linear-gradient(45deg, #C3463C, #8D312D);
+    color: #111010;
     font-weight: 600;
     transition: all 0.2s ease;
   }
 
   .btn-primary:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+    box-shadow: 0 0 20px rgba(195, 70, 60, 0.5);
   }
 
   .btn-primary:active {
@@ -68,19 +68,19 @@
 
   .sidebar-item:hover {
     transform: scale(1.04);
-    background: rgba(28, 22, 22, 0.8);
-    box-shadow: 0 0 12px rgba(220, 38, 38, 0.25);
+    background: rgba(51, 30, 31, 0.8);
+    box-shadow: 0 0 12px rgba(141, 49, 45, 0.25);
   }
 }
 
 @layer utilities {
   .bg-glow-red {
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(141, 49, 45, 0.2) 0%, rgba(17, 16, 16, 0) 70%);
     filter: blur(100px);
   }
 
   .text-gradient {
-    background: linear-gradient(45deg, #F59E0B, #EA580C);
+    background: linear-gradient(45deg, #C3463C, #8D312D);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -89,10 +89,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+    box-shadow: 0 0 10px rgba(141, 49, 45, 0.3);
   }
   50% {
-    box-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 30px rgba(141, 49, 45, 0.8), 0 0 60px rgba(195, 70, 60, 0.3);
   }
 }
 

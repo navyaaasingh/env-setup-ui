@@ -7,25 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0F0A0A',
-        surface: '#1C1616',
-        primary: '#F59E0B',
-        accent: '#DC2626',
-        'subtle-accent': '#FDE047',
-        'text-primary': '#FAFAF9',
-        'text-muted': '#71717A',
-        'border-subtle': '#2D2626',
+        background: '#111010',
+        surface: '#331E1F',
+        primary: '#C3463C',
+        accent: '#8D312D',
+        'subtle-accent': '#C3463C',
+        'text-primary': '#F4EEED',
+        'text-muted': '#C3A7A6',
+        'border-subtle': '#442A2B',
       },
       boxShadow: {
-        'heat': '0 4px 24px rgba(153, 27, 27, 0.4)',
-        'heat-lg': '0 8px 40px rgba(153, 27, 27, 0.5)',
-        'glow-primary': '0 0 20px rgba(245, 158, 11, 0.4)',
-        'glow-accent': '0 0 20px rgba(220, 38, 38, 0.4)',
+        'heat': '0 4px 24px rgba(141, 49, 45, 0.4)',
+        'heat-lg': '0 8px 40px rgba(141, 49, 45, 0.5)',
+        'glow-primary': '0 0 20px rgba(195, 70, 60, 0.4)',
+        'glow-accent': '0 0 20px rgba(141, 49, 45, 0.4)',
       },
       keyframes: {
         'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 10px rgba(220, 38, 38, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(245, 158, 11, 0.3)' },
+          '0%, 100%': { boxShadow: '0 0 10px rgba(141, 49, 45, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(141, 49, 45, 0.8), 0 0 60px rgba(195, 70, 60, 0.3)' },
         },
         'fade-in': {
           '0%': { opacity: '0', transform: 'translateY(8px)' },
@@ -57,8 +57,8 @@ export default {
         'shimmer': 'shimmer 2s linear infinite',
       },
       backgroundImage: {
-        'button-gradient': 'linear-gradient(45deg, #F59E0B, #EA580C)',
-        'sphere-gradient': 'radial-gradient(circle at top left, rgba(253, 224, 71, 0.8), rgba(185, 28, 28, 0.9))',
+        'button-gradient': 'linear-gradient(45deg, #C3463C, #8D312D)',
+        'sphere-gradient': 'radial-gradient(circle at top left, rgba(195, 70, 60, 0.8), rgba(141, 49, 45, 0.9))',
       },
     },
   },
