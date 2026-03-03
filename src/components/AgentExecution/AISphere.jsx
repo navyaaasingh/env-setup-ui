@@ -53,7 +53,10 @@ export default function AISphere() {
             animation: isActive ? 'spin-slow 8s linear infinite' : undefined,
           }}
         >
-          <span className="text-2xl select-none">
+          <span
+            className="text-2xl select-none"
+            aria-label={`Agent state: ${agentState}`}
+          >
             {isError ? '⚠' : isCompleted ? '✓' : isWaiting ? '⏸' : isActive ? '⟳' : '◈'}
           </span>
         </div>

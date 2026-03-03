@@ -27,6 +27,7 @@ export default function SearchChat({ isCollapsed }) {
     <div className="relative">
       <span
         className="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-sm"
+        aria-hidden="true"
         style={{ color: '#71717A' }}
       >
         🔍

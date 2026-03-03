@@ -9,18 +9,30 @@ const api = axios.create({
 });
 
 export async function runAgent(prompt, model, mode) {
-  const response = await api.post('/agent/run', { prompt, model, mode });
-  return response.data;
+  try {
+    const response = await api.post('/agent/run', { prompt, model, mode });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Failed to run agent');
+  }
 }
 
 export async function stopAgent() {
-  const response = await api.post('/agent/stop');
-  return response.data;
+  try {
+    const response = await api.post('/agent/stop');
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Failed to stop agent');
+  }
 }
 
 export async function approveStep() {
-  const response = await api.post('/agent/approve');
-  return response.data;
+  try {
+    const response = await api.post('/agent/approve');
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Failed to approve step');
+  }
 }
 
 export default api;

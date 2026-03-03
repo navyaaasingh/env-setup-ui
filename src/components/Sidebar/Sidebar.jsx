@@ -32,6 +32,7 @@ export default function Sidebar() {
       <button
         onClick={() => setIsCollapsed(!isCollapsed)}
         className="flex items-center justify-center p-3 transition-all duration-200 hover:text-primary"
+        aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         style={{
           height: '52px',
           color: '#71717A',

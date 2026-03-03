@@ -26,8 +26,7 @@ export default {
         'spin-slow': 'spin-slow 8s linear infinite',
         'fade-in': 'fade-in 0.4s ease-out forwards',
         'breathe': 'breathe 3s ease-in-out infinite',
-        'step-pulse': 'pulse-glow 1.5s ease-in-out infinite',
-      },
+        'step-pulse': 'pulse-glow 1.5s ease-in-out infinite',      },
       keyframes: {
         'pulse-glow': {
           '0%, 100%': { boxShadow: '0 0 10px rgba(245, 158, 11, 0.3)' },

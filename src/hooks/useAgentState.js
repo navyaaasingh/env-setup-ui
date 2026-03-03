@@ -102,10 +102,10 @@ export function useAgentState() {
 
       const t = setTimeout(() => {
         dispatch({ type: 'UPDATE_STEP', payload: { id: waitingStep.id, status: 'completed' } });
-        const allDone = state.steps.every(
-          (s) => s.id === waitingStep.id || s.status === 'completed'
+        const remainingSteps = state.steps.filter(
+          (s) => s.id !== waitingStep.id && s.status !== 'completed'
         );
-        if (allDone) {
+        if (remainingSteps.length === 0) {
           dispatch({
             type: 'SET_OUTPUT',
             payload: 'Agent execution completed successfully after manual approval.',
