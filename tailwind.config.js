@@ -7,25 +7,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#111010',
-        surface: '#331E1F',
-        primary: '#C3463C',
-        accent: '#8D312D',
-        'subtle-accent': '#C3463C',
-        'text-primary': '#F4EEED',
-        'text-muted': '#C3A7A6',
-        'border-subtle': '#442A2B',
+        background: '#0A101C',
+        surface: '#161B22',
+        primary: '#00F5FF',
+        accent: '#A000FF',
+        'subtle-accent': '#C0C0C0',
+        'text-primary': '#F0F8FF',
+        'text-muted': '#A1A1AA',
+        'border-subtle': '#2D2626',
       },
       boxShadow: {
-        'heat': '0 4px 24px rgba(141, 49, 45, 0.4)',
-        'heat-lg': '0 8px 40px rgba(141, 49, 45, 0.5)',
-        'glow-primary': '0 0 20px rgba(195, 70, 60, 0.4)',
-        'glow-accent': '0 0 20px rgba(141, 49, 45, 0.4)',
+        'heat': '0 4px 24px rgba(16, 27, 45, 0.4)',
+        'heat-lg': '0 8px 40px rgba(16, 27, 45, 0.5)',
+        'glow-primary': '0 0 20px rgba(0, 245, 255, 0.4)',
+        'glow-accent': '0 0 20px rgba(160, 0, 255, 0.4)',
       },
       keyframes: {
         'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 10px rgba(141, 49, 45, 0.3)' },
-          '50%': { boxShadow: '0 0 30px rgba(141, 49, 45, 0.8), 0 0 60px rgba(195, 70, 60, 0.3)' },
+          '0%, 100%': { boxShadow: '0 0 10px rgba(0, 245, 255, 0.3)' },
+          '50%': { boxShadow: '0 0 30px rgba(0, 245, 255, 0.8), 0 0 60px rgba(160, 0, 255, 0.3)' },
         },
         'fade-in': {
           '0%': { opacity: '0', transform: 'translateY(8px)' },
@@ -57,8 +57,8 @@ export default {
         'shimmer': 'shimmer 2s linear infinite',
       },
       backgroundImage: {
-        'button-gradient': 'linear-gradient(45deg, #C3463C, #8D312D)',
-        'sphere-gradient': 'radial-gradient(circle at top left, rgba(195, 70, 60, 0.8), rgba(141, 49, 45, 0.9))',
+        'button-gradient': 'linear-gradient(45deg, #00F5FF, #2066E6)',
+        'sphere-gradient': 'radial-gradient(circle at top left, rgba(0, 245, 255, 0.8), rgba(100, 0, 250, 0.9))',
       },
     },
   },

@@ -10,10 +10,10 @@ import {
 const statusConfig = {
   idle: { label: 'Idle', color: 'text-text-muted', bg: 'bg-text-muted/10', dot: 'bg-text-muted' },
   thinking: { label: 'Thinking', color: 'text-primary', bg: 'bg-primary/10', dot: 'bg-primary' },
-  executing: { label: 'Executing', color: 'text-subtle-accent', bg: 'bg-subtle-accent/10', dot: 'bg-subtle-accent' },
+  executing: { label: 'Executing', color: 'text-accent', bg: 'bg-accent/10', dot: 'bg-accent' },
   waiting: { label: 'Awaiting Approval', color: 'text-subtle-accent', bg: 'bg-subtle-accent/10', dot: 'bg-subtle-accent' },
   completed: { label: 'Completed', color: 'text-green-400', bg: 'bg-green-400/10', dot: 'bg-green-400' },
-  error: { label: 'Error', color: 'text-accent', bg: 'bg-accent/10', dot: 'bg-accent' },
+  error: { label: 'Error', color: 'text-red-400', bg: 'bg-red-400/10', dot: 'bg-red-400' },
 }
 
 export default function StatusBadge() {

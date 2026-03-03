@@ -6,11 +6,11 @@ import { Zap } from 'lucide-react'
 
 const stateGlowMap = {
   idle: '',
-  thinking: 'shadow-[0_0_40px_rgba(245,158,11,0.2)]',
-  executing: 'shadow-[0_0_40px_rgba(253,224,71,0.2)]',
+  thinking: 'shadow-[0_0_40px_rgba(0,245,255,0.2)]',
+  executing: 'shadow-[0_0_40px_rgba(0,245,255,0.25)]',
   waiting: 'animate-pulse-glow',
-  completed: 'shadow-[0_0_40px_rgba(74,222,128,0.15)]',
-  error: 'shadow-[0_0_40px_rgba(220,38,38,0.3)]',
+  completed: 'shadow-[0_0_40px_rgba(0,245,255,0.15)]',
+  error: 'shadow-[0_0_40px_rgba(160,0,255,0.3)]',
 }
 
 const stateBorderMap = {
