@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useCallback } from 'react'
 import { useAgent } from './context/AgentContext.jsx'
 import Sidebar from './components/Sidebar/Sidebar.jsx'
 import TopBar from './components/TopBar/TopBar.jsx'
@@ -7,25 +7,40 @@ import ExecutionPanel from './components/AgentExecution/ExecutionPanel.jsx'
 
 const stateBackgroundMap = {
   idle: '',
-  thinking: 'bg-[radial-gradient(ellipse_at_top_right,rgba(195,70,60,0.06)_0%,transparent_60%)]',
-  executing: 'bg-[radial-gradient(ellipse_at_top_right,rgba(195,70,60,0.07)_0%,transparent_60%)]',
-  waiting: 'bg-[radial-gradient(ellipse_at_center,rgba(141,49,45,0.05)_0%,transparent_70%)]',
-  completed: 'bg-[radial-gradient(ellipse_at_top_right,rgba(74,222,128,0.05)_0%,transparent_60%)]',
-  error: 'bg-[radial-gradient(ellipse_at_top_right,rgba(141,49,45,0.08)_0%,transparent_60%)]',
+  thinking: 'bg-[radial-gradient(ellipse_at_top_right,rgba(0,245,255,0.06)_0%,transparent_60%)]',
+  executing: 'bg-[radial-gradient(ellipse_at_top_right,rgba(0,245,255,0.07)_0%,transparent_60%)]',
+  waiting: 'bg-[radial-gradient(ellipse_at_center,rgba(160,0,255,0.05)_0%,transparent_70%)]',
+  completed: 'bg-[radial-gradient(ellipse_at_top_right,rgba(0,245,255,0.05)_0%,transparent_60%)]',
+  error: 'bg-[radial-gradient(ellipse_at_top_right,rgba(160,0,255,0.08)_0%,transparent_60%)]',
 }
 
 export default function App() {
   const { state } = useAgent()
   const bgClass = stateBackgroundMap[state.status] || ''
+  const bgRef = useRef(null)
+
+  const handleMouseMove = useCallback((e) => {
+    const el = bgRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const xPercent = ((e.clientX - rect.left) / rect.width) * 100
+    const yPercent = ((e.clientY - rect.top) / rect.height) * 100
+    el.style.setProperty('--mouse-x', `${xPercent}%`)
+    el.style.setProperty('--mouse-y', `${yPercent}%`)
+  }, [])
 
   return (
-    <div className={`flex h-screen bg-background text-text-primary overflow-hidden transition-all duration-500 ${bgClass}`}>
+    <div
+      ref={bgRef}
+      onMouseMove={handleMouseMove}
+      className={`reactive-bg flex h-screen text-text-primary overflow-hidden transition-all duration-500 ${bgClass}`}
+    >
       {/* Background glow decoration */}
       <div
         className="pointer-events-none fixed top-1/4 right-1/4 w-96 h-96 rounded-full opacity-30 transition-opacity duration-500"
         style={{
-          background: 'radial-gradient(circle, rgba(141, 49, 45, 0.2) 0%, rgba(17, 16, 16, 0) 70%)',
-          filter: 'blur(60px)',
+          background: 'radial-gradient(circle, rgba(160, 0, 255, 0.15) 0%, rgba(10, 16, 28, 0) 70%)',
+          filter: 'blur(100px)',
         }}
       />
 

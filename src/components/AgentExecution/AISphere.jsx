@@ -10,7 +10,7 @@ export default function AISphere() {
       {/* Outer glow */}
       {isActive && (
         <div
-          className="absolute inset-0 rounded-full bg-glow-red animate-pulse opacity-60"
+          className="absolute inset-0 rounded-full bg-glow-accent animate-pulse opacity-60"
           style={{ transform: 'scale(2.5)' }}
         />
       )}
@@ -26,15 +26,15 @@ export default function AISphere() {
         `}
         style={{
           boxShadow: isActive
-            ? '0 0 40px rgba(141, 49, 45, 0.5), 0 0 80px rgba(195, 70, 60, 0.2)'
-            : '0 0 20px rgba(141, 49, 45, 0.2)',
+            ? '0 0 40px rgba(0, 245, 255, 0.5), 0 0 80px rgba(160, 0, 255, 0.2)'
+            : '0 0 20px rgba(160, 0, 255, 0.2)',
         }}
       >
         {/* Inner ring */}
         {isActive && (
           <div
             className="absolute inset-2 rounded-full border border-white/20 animate-spin-slow"
-            style={{ borderTopColor: 'rgba(195, 70, 60, 0.6)' }}
+            style={{ borderTopColor: 'rgba(0, 245, 255, 0.6)' }}
           />
         )}
 
